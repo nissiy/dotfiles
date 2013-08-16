@@ -1,0 +1,13 @@
+[user]
+  name = nissiy
+  email = nishimura@vasily.jp
+[color]
+  ui = auto
+[alias]
+  co = checkout
+  ci = commit -a
+  st = status
+  up = pull --rebase
+  br = branch
+[core]
+  pager = cat
