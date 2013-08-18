@@ -6,7 +6,7 @@ local BLUE=$'%{\e[34m%}'
 local DEFAULT=$'%{\e[m%}'
 
 # PROMPT
-PS1="$GREEN${USER}$BLUE@API(rails4)$DEFAULT:$BLUE%~$DEFAULT%(!.#.$) " # ユーザ@ホスト:カレントディレクトリ
+PS1="$GREEN${USER}@${HOST%%.*}$DEFAULT:$BLUE%~$DEFAULT%(!.#.$) " # ユーザ@ホスト:カレントディレクトリ
 RPROMPT="%T" # 右側に時間を表示する
 setopt transient_rprompt # 右側まで入力がきたら時間を消す
 setopt prompt_subst # 便利なプロント
