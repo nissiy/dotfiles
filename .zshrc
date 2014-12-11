@@ -53,7 +53,8 @@ bindkey "^N" history-beginning-search-forward-end
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完の時に大文字小文字を区別しない
 
-if [ -x /usr/bin/dircolors ]; then
+#if [ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]; then # for Mac
+if [ -x /usr/bin/dircolors ]; then # for Linux
   eval "`dircolors -b`"
   alias ls='ls --color=auto'
 fi
@@ -66,8 +67,12 @@ alias searchcss="find . -name '*.css' | xargs grep -i "
 alias searchscss="find . -name '*.scss' | xargs grep -i "
 alias searchruby="find . -name '*.rb' | xargs grep -i "
 alias searchjava="find . -name '*.java' | xargs grep -i "
+alias ll="ls -l"
 
-# ssh-agent自動起動
+# alias for Android
+alias dumpsys="adb shell dumpsys"
+
+# ssh-agent自動起動[for Linux]
 agentPID=`ps gxww|grep "ssh-agent]*$"|awk '{print $1}'`
 agentSOCK=`/bin/ls -t /tmp/ssh*/agent*|head -1`
 if [ "$agentPID" = "" -o "$agentSOCK" = "" ]; then
