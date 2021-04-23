@@ -71,7 +71,7 @@ alias ll="ls -l"
 
 # alias for Android
 alias dumpsys="adb shell dumpsys"
-alias activityrecord="dumpsys activity | grep -B 1 \"Run #[0-9]*:\""
+alias activityrecord="dumpsys activity activities | grep \"Hist #[0-9]\" | awk '{print \$6}'"
 alias fragmentrecord="dumpsys activity top | grep -B 1 \"#[0-9]*:\""
 
 # ssh-agent自動起動[for Linux]
